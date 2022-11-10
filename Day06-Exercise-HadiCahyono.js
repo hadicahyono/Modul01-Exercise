@@ -18,15 +18,15 @@ const db = [
 
 // const { name, email, age, score } = Student;
 
-const sorted = db.sort((a, b) => {
+const sortedScore = db.sort((a, b) => {
   return a.score - b.score;
 });
 
 let avgScore = db.reduce((total, next) => total + next.score, 0) / db.length;
 
 console.log(
-  `Score\nHighest: ${sorted[sorted.length - 1].score}\nLowest: ${
-    sorted[0].score
+  `Score\nHighest: ${sortedScore[sortedScore.length - 1].score}\nLowest: ${
+    sortedScore[0].score
   }\nAverage: ${avgScore}`
 );
 const sortedAge = db.sort((a, b) => {
@@ -40,3 +40,20 @@ console.log(
     sortedAge[0].age
   }\nAverage: ${avgAge}`
 );
+
+// <-----------------------> //
+let carts = [];
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Transaction extends Product {
+  constructor(name, price, total, qty) {
+    super(name, price);
+    this.total = total;
+    this.qty = qty;
+  }
+}
