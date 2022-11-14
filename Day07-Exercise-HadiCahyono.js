@@ -31,6 +31,7 @@ const dent = [
 
 const join = (arr1, arr2) => {
   const arr3 = [...arr1, ...arr2];
+  console.log(arr3);
   let res = arr3.reduce((unique, o) => {
     if (!unique.some((obj) => obj.name === o.name && obj.email === o.email)) {
       unique.push(o);
