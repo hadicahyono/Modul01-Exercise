@@ -146,6 +146,6 @@ const findPos = (item) => {
   return findItem;
 };
 
-const x = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const x = [1, "b", 3, "d", 5, "f", 7, "h", 9];
 
 console.log(modIndexOf(x, findPos));
