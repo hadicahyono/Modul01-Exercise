@@ -28,6 +28,8 @@ const ganjilGenap = (number) => {
   }
 };
 
+console.log(ganjilGenap(7));
+
 /*
 TITLE: function reverse
 INPUT: function reverse memiliki parameter, diisi sebuah variabel yang berisi String
@@ -140,7 +142,7 @@ const modIndexOf = (arr, callback) => {
 };
 
 const findPos = (item) => {
-  const findItem = 3;
+  const findItem = 9; // mencari Number 9 ada di posisi berapa
   return findItem;
 };
 
