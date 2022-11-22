@@ -1,64 +1,4 @@
 /*
-TITLE: function ganjilGenap
-INPUT:
-    1. function menerima satu parameter berupa angka -> (number)
-PROCESS:
-    1. if parameter di-modulo 2 hasilnya sama dengan 0 -> number % 2 == 0
-    2. return "genap"
-    3. else 
-    4. return "ganjil"
-OUTPUT:
-    1. string ganjil atau string genap 
-FINAL: 
-    function ganjilGenap(number) {
-    process 1
-    process 2
-    process 3
-    process 4
-    OUTPUT
-}
-*/
-
-const ganjilGenap = (number) => {
-  //   return number % 2 == 0 ? "Genap" : "Ganjil";
-  if (number % 2 == 0) {
-    return "genap";
-  } else {
-    return "ganjil";
-  }
-};
-
-console.log(ganjilGenap(7));
-
-/*
-TITLE: function reverse
-INPUT: function reverse memiliki parameter, diisi sebuah variabel yang berisi String
-PROCESS:
-    1. split variable '' -> String yang dijadikan argument akan dicacah menjadi tiap String dan dimasukkan ke array
-    2. reverse variable -> String yang telah tercacah akan di-reverse
-    3. join variable -> String yang telah di-reverse akan digabungkan kembali menjadi String utuh.
-OUTPUT:
-    -> variable awal ter-reverse
-FINAL:
-    function reverse(variable) {
-        process 1
-        process 2
-        process 3
-        OUTPUT
-    }
-*/
-
-let words = "belum coba";
-
-const reverse = (string) => {
-  let split = string.split("");
-  let rev = split.reverse("");
-  return rev.join("");
-};
-
-console.log(reverse(words));
-
-/*
 TITLE: function modMap
 INPUT: parameter containing init array and a callback
 PROCESS: 
@@ -76,13 +16,14 @@ OUTPUT:
 const modMap = (arr, callback) => {
   let temp = [];
   for (let i = 0; i < arr.length; i++) {
-    temp.push(callback(arr[i]));
+    temp.push(callback(arr[i], i));
   }
   return temp;
 };
 
-const exponent = (number) => {
-  return (number **= 2);
+const exponent = (value, i) => {
+  // return (value **= 2);
+  return `${i + 1}. ${value}`;
 };
 
 const num = [2, 4, 6];
@@ -103,20 +44,29 @@ OUTPUT: an array containing filtered items
 const modFilter = (arr, callback) => {
   let temp = [];
   for (let i = 0; i < arr.length; i++) {
-    let isFilter = callback(arr[i]);
-    if (isFilter) {
+    // let isFilter = callback(arr[i]);
+    if (callback(arr[i])) {
       temp.push(arr[i]);
     }
   }
   return temp;
 };
 
-const genap = (number) => {
-  return number % 2 == 0;
+const genap = (value, i) => {
+  return value % 2 == 1;
+  // return ` ${i + 1}. ${value}`;
 };
 
-const numFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numFilter = [5, 6, 7, 8];
 console.log(modFilter(numFilter, genap));
+
+// let filtered = numFilter.filter((v, i) => {
+//   if (v % 2 == 0) {
+//     return `a. ${v}`;
+//   }
+// });
+
+// console.log(filtered);
 
 /*
 TITLE: modIndexOf function
