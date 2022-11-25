@@ -1,4 +1,4 @@
-let testChar = "DC";
+let testChar = "AA";
 
 const chars = (char) => {
   for (var i = 0, j = 0; i < char.length; i++) {
@@ -19,11 +19,29 @@ const unique = numbers.filter((number) => {
 const anagram = (s, t) => {
   const newS = s.split("");
   const newT = t.split("");
+
   const sortS = newS.sort().join("");
   const sortT = newT.sort().join("");
-  return sortS === sortT;
+
+  const lowS = sortS.toLowerCase();
+  const lowT = sortT.toLowerCase();
+  return lowS === lowT;
 };
 
-const s = "anagram";
-const t = "nagaram";
-console.log(anagram(s, t));
+const s = "rat";
+const t = "car";
+// console.log(anagram(s, t));
+
+const fibo = (n) => {
+  let num1 = 0;
+  let num2 = 1;
+  let num3;
+  for (let i = 1; i <= n; i++) {
+    num3 = num1 + num2;
+    num1 = num2;
+    num2 = num3;
+  }
+  return num2;
+};
+
+console.log(fibo(5));
